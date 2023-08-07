@@ -31,7 +31,10 @@ function Button({
         })
       );
     
-    return <button {...rest} className={classes}>
+    return <button 
+                {...rest} 
+                className={classes}
+            >
                 {children}
             </button>
 

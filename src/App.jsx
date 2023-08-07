@@ -1,41 +1,34 @@
-import Button from "./Button";
-import { GoBell, GoInfinity, GoLog} from 'react-icons/go'
-function App(){
+import Accordion from "./components/Accordion";
+function App(){ 
+    const items =[
+        {
+            id:1,
+            label:'Can i use React?',
+            content: 'You can use it You can use it You can use it You can use it'
+        },
+        {
+            id: 2,
+            label:'Can i use React?',
+            content: 'You can use it You can use it You can use it You can use it'
+        },
+        {
+            id: 3,
+            label:'Can i use React?',
+            content: 'You can use it You can use it You can use it You can use it'
+        },
+        {
+            id:4,
+            label:'Can i use React?',
+            content: 'You can use it You can use it You can use it You can use it'
+        },
+        {
+            id:5,
+            label:'Can i use React?',
+            content: 'You can use it You can use it You can use it You can use it'
+        },
+    ]
 
-    return(
-        <div>
-             <div>
-                <Button 
-                    primary 
-                    rounded 
-                    outline
-                    className="mb-5"
-                >
-                    <GoBell/> 
-                    Click me!!
-                </Button>
-            </div>
-            <div>
-                <Button secondary>
-                    <GoLog />
-                    Buy now
-                </Button>
-            </div>
-            <div>
-                <Button success outline>
-                    <GoInfinity />
-                    Click me!
-                </Button>
-            </div>
-            <div>
-                <Button warning>See deal</Button>
-            </div>
-           
-            <div>
-                <Button danger>Something!</Button>
-            </div>
-        </div>
-    )
+     return <Accordion items={items}/>
 }
 
 export default App;

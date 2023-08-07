@@ -1,3 +1,5 @@
+## Components and pages
+Whenever we have something reusable then it is a component, otheriwse a page, which still is a react component but not intended to be reused.
 ## Event handlers for custom component
 If we create a custom component and we pass it down a list of props, it will eventually get too complex to keep adding eventHandlers. A way to solve this is through the ```...``` operator.
 
@@ -24,7 +26,7 @@ If we create a custom component and we pass it down a list of props, it will eve
 
 ## Implementation with TypeScript
 ```javascript
-    import type { FunctionComponent } from "react";
+import type { FunctionComponent } from "react";
 import className from "classnames";
  
 type ExcludeFromTuple<T extends any[], U> = {
@@ -85,3 +87,16 @@ const Button: FunctionComponent<ButtonProps> = ({
  
 export default Button;
 ```
+
+## Design process: Events + State Design Process
+### What state + event handlers are there?
+1. List out what an user will do and changed they will see while using the app.
+2. Categorize each step as 'state' or 'event handler'.
+3. Group common steps. Remove duplicates. Rewrite descriptions.
+### What name and type?
+4. Look at mockup. Remove or simplify parts that arent changing.
+5. Replace remaining elements with text descriptions.
+6. Repeat #4 and #5 with a different variation
+7. Image you have to write a function that returns the text of what steps #5 and #6. In addition to your components props, what other arguments would you need?
+### where's it defined?
+8. Decide where each event handler + state will be defined
