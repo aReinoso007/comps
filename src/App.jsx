@@ -2,15 +2,17 @@ import Button from "./Button";
 import { GoBell, GoInfinity, GoLog} from 'react-icons/go'
 function App(){
 
-    const handleClick=()=>{
-        console.log('click bebe')
-    }
-
     return(
         <div>
              <div>
-                <Button onClick={handleClick} primary rounded outline>
-                    <GoBell /> Hide Ads!
+                <Button 
+                    primary 
+                    rounded 
+                    outline
+                    className="mb-5"
+                >
+                    <GoBell/> 
+                    Click me!!
                 </Button>
             </div>
             <div>
