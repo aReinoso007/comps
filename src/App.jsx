@@ -8,16 +8,16 @@ function App(){
                 <Button>Click me!</Button>
             </div>
             <div>
-                <Button></Button>
+                <Button>Buy now</Button>
             </div>
             <div>
-                <Button></Button>
+                <Button>See deal</Button>
             </div>
             <div>
-                <Button></Button>
+                <Button>Hide Ads!</Button>
             </div>
             <div>
-                <Button></Button>
+                <Button>Something!</Button>
             </div>
         </div>
     )
