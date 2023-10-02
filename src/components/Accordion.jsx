@@ -13,9 +13,7 @@ function Accordion({
                 <div>
                     {item.label}
                 </div>
-                <div>
-                    {item.content}
-                </div>
+                {isExpanded && <div>{item.content}</div>}
             </div>
         )
     });

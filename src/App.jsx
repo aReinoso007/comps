@@ -23,8 +23,8 @@ function App(){
         },
         {
             id:5,
-            label:'Can i use React?',
-            content: 'You can use it You can use it You can use it You can use it'
+            label:'This wont render',
+            content: ''
         },
     ]
 
