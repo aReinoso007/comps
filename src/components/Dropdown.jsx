@@ -16,14 +16,12 @@ function Dropdown({options, selection, onSelect}){
         return <div onClick={()=> handleOptionClick(option)} key={option.value} className="item">{option.label}</div>
     });
 
-    let content = 'Select...';
-    if(selection){
-        content=selection.label;
-    }
-
+    
     return (
        <div>
-         <div onClick={handleClick}>{content}</div>
+         <div onClick={handleClick}>
+            { selection?.label || 'Select a color'}
+            </div>
          {isOpen && <div>{renderedItems}</div>}
        </div>
     );
