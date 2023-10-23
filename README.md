@@ -100,3 +100,21 @@ export default Button;
 7. Image you have to write a function that returns the text of what steps #5 and #6. In addition to your components props, what other arguments would you need?
 ### where's it defined?
 8. Decide where each event handler + state will be defined
+
+
+## Event handlers
+```javascript
+
+  const renderItems = items.map((item, index)=>{
+    const isExpanded = index === expandedIndex;
+  })
+
+  const handleClick = () =>{
+    setExpandedIndex(index)
+  }
+
+  return (
+    <div onClock={handleClick}>{item.label}</div>
+  )
+
+```
