@@ -23,8 +23,8 @@ function App(){
         },
         {
             id:5,
-            label:'This wont render',
-            content: ''
+            label:'This is the last one',
+            content: 'qwrernnmnkdjkfkdjofo   lhn,ndfjkdjkf  sdsd  dsf rghedf'
         },
     ]
 
