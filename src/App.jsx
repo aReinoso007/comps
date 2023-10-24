@@ -1,24 +1,24 @@
 import Dropdown from "./components/Dropdown";
 import { useState } from "react";
-function App(){ 
+function App() {
+  const [selection, setSelection] = useState(null);
 
-    const [selection, setSelection] = useState(null);
+  const handleSelect = (option) => {
+    setSelection(option);
+  };
 
-    const handleSelect=(option)=>{
-        setSelection(option);
-    }
+  const options = [
+    { label: "RED", value: "red" },
+    { label: "GREEN", value: "green" },
+    { label: "BLUE", value: "blue" },
+  ];
 
-    const options=[
-        {label:'RED', value:'red'},
-        {label:'GREEN', value:'green'},
-        {label:'BLUE', value:'blue'},
-    ]
-
-    return <Dropdown 
-            options={options} 
-            value={selection}
-            onChange={handleSelect}
-        />
+  return (
+    <div className="flex">
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
+      <Dropdown options={options} value={selection} onChange={handleSelect} />
+    </div>
+  );
 }
 
 export default App;
