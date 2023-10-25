@@ -150,7 +150,7 @@ const renderedItems = items.map((item, index) => {
 
   return (
     <div key={item.id}>
-      <div onClick={()=> handleClick(index)}>{item.label}</div>
+      <div onClick={() => handleClick(index)}>{item.label}</div>
       {isExpanded && <div>{item.content}</div>}
     </div>
   );
@@ -158,12 +158,52 @@ const renderedItems = items.map((item, index) => {
 
 return <div>{renderedItems}</div>;
 ```
+
 ## Event capturing and bubling
+
 Whenever a user clicks on an element, does any action, the browser looks for event handlers.
 Its divided in 3 phases:
+
 1. Capture phase - this one as developers we ignore it
-The browser looks at the element that was clicked on, then looks for the most parent element, then searches for event handlers, if it does then it calls them. Then goes to the 2nd most parent element and does the same, this repeats until the element that was triggered
-2. Targer phase
-The browser looks at the clicked element, and calls the event handler of the element that was clicked on
+   The browser looks at the element that was clicked on, then looks for the most parent element, then searches for event handlers, if it does then it calls them. Then goes to the 2nd most parent element and does the same, this repeats until the element that was triggered
+2. Target phase
+   The browser looks at the clicked element, and calls the event handler of the element that was clicked on
 3. Buble phase
-It goes to the immeadiate parent and ask for event handlers and calls them, all the way up to the most parent.
+   It goes to the immeadiate parent and ask for event handlers and calls them, all the way up to the most parent.
+
+```javascript
+/*
+  setting up event handlers
+*/
+  document.addEventListener('click', handleClick);
+  /*
+    Set up event handler for capture fase, the 3rd argument controls bubble vs capture
+    false by default, 90% of the time we want it false
+  */
+ document.addEventListener('click', handleClick, true)
+```
+## useEffect
+it allows us to run little snipets of code at various points in time, so we can use this to keep watching for event handlers
+the first time we render the component
+
+## `useRef()`
+To have a reference to the component, so the way we use it is like this:
+```javascript
+  /*
+  we create the reference
+  */
+  const divEl = useRef();
+
+  /*
+  we assign it to the element we want to keep track of
+  */
+  return (
+       <div ref={divEl} className="w-48 relative">
+        <Panel className="flex justify-between items-center cursor-pointer" onClick={handleClick}>
+        { value?.label || 'Select a color'}
+            {isOpen ? <GoChevronUp className="text-lg"/> : <GoChevronDown className="text-lg"/>}
+        </Panel>
+         {isOpen && <Panel className="absolute top-full">{renderedItems}</Panel>}
+       </div>
+    );
+```
