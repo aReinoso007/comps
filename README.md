@@ -158,3 +158,12 @@ const renderedItems = items.map((item, index) => {
 
 return <div>{renderedItems}</div>;
 ```
+## Event capturing and bubling
+Whenever a user clicks on an element, does any action, the browser looks for event handlers.
+Its divided in 3 phases:
+1. Capture phase - this one as developers we ignore it
+The browser looks at the element that was clicked on, then looks for the most parent element, then searches for event handlers, if it does then it calls them. Then goes to the 2nd most parent element and does the same, this repeats until the element that was triggered
+2. Targer phase
+The browser looks at the clicked element, and calls the event handler of the element that was clicked on
+3. Buble phase
+It goes to the immeadiate parent and ask for event handlers and calls them, all the way up to the most parent.
