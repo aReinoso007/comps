@@ -8,6 +8,11 @@ function Dropdown({options, value, onChange}){
 
     useEffect(()=>{ 
         const handler = (event)=>{
+            /*
+            This check is necessary to avoid looking for a reference if the element hasnt been rendered yet.
+            Or has been unmounted.
+            */
+            if(!divEl.current ) return;
             if(!divEl.current.contains(event.target)){
                 setIsOpen(false);
             }
