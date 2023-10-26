@@ -207,3 +207,9 @@ To have a reference to the component, so the way we use it is like this:
        </div>
     );
 ```
+
+## Navigatio libraries
+1. React-Router
+2. Wouter
+3. React-Location
+4. Reach-Router
