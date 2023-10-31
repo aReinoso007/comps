@@ -7,8 +7,8 @@ function Modal({ onClose, children, actionBar }) {
      */
     useEffect(()=>{
         document.body.classList.add('overflow-hidden')
-        
-        //to remove the class when the modal is unmounted
+
+        //to remove the class when the modal is unmounted, to enable scrolling
         return ()=>{
             document.body.classList.remove('overflow-hidden')
         }
