@@ -2,9 +2,16 @@ import { useEffect } from "react";
 import { createPortal } from "react-dom";
 
 function Modal({ onClose, children, actionBar }) {
-
+    /**
+     * It applies when the modal is first rendered  
+     */
     useEffect(()=>{
-        document.body.style.overflow = 'hidden';
+        document.body.classList.add('overflow-hidden')
+        
+        //to remove the class when the modal is unmounted
+        return ()=>{
+            document.body.classList.remove('overflow-hidden')
+        }
     }, []);
 
   return createPortal(
