@@ -213,3 +213,20 @@ To have a reference to the component, so the way we use it is like this:
 2. Wouter
 3. React-Location
 4. Reach-Router
+
+## Modals
+### Portals
+This is usefull when dealing with modals, it posiitions the element outside the html tree so it can be position relative to the app container, thus avoiding bugs if a parent element has a given position.
+```javascript
+  function Modal(){
+
+    return ReactDOM.createPortal(
+      <div>Portal</div>
+
+      document.querySelector('.modal-container')
+
+    );
+
+  }
+```
+The second element is a reference to an element in out index.html file, so we can create an element and give it an idenfifier class name such as   ```modal-container```
