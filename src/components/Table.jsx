@@ -1,4 +1,5 @@
-function Table(){
+function Table({data}){
+
     return(
         <div>
            Table
