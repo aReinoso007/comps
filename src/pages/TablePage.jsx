@@ -22,7 +22,7 @@ function TablePage(){
         {
             label:'Score',
             render: (fruit) => fruit.score,
-            header: (index) => <th className="bg-red-500" key={index}>Score</th>,
+            header: () => <th className="bg-red-500">Score</th>,
             sort: (a, b) => a.score - b.score,
             
         },
