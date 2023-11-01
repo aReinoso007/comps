@@ -230,3 +230,16 @@ This is usefull when dealing with modals, it posiitions the element outside the 
   }
 ```
 The second element is a reference to an element in out index.html file, so we can create an element and give it an idenfifier class name such as   ```modal-container```
+
+## Basic sorting in JS
+The .sort function doesnt work well with numbers since it first transforms each element to string, so we need to pass a sorting function.
+A and B are flipped, the way the comparison goes is like so:
+`a = 1, b = 5`, so then `1-5` returns a negative value, so it 1 takes the position at 0 and 5 moves up one position to the right `[1, 5, 4, 3]`, it will keep on doing this untill all the numbers are sorted
+  ```javascript
+    const data = [5, 1, 4, 3];
+
+    data.sort((a, b)=>{
+      return a-b;
+    })
+
+  ```
