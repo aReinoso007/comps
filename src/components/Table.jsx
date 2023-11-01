@@ -1,8 +1,11 @@
 function Table({ data, config, keyFn }) {
-    
-  const renderedHeaders = config.map((column, index) => (
-    <th key={index}>{column.label}</th>
-  ));
+
+  const renderedHeaders = config.map((column, index) => {
+    if(column.header){
+        return column.header(index);
+    }
+    return <th key={index}>{column.label}</th>
+  });
 
   const renderedRows = data.map((rowData) => {
     const renderedCells = config.map((column, index) => {

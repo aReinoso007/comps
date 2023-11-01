@@ -279,7 +279,7 @@ Sorting array of objects:
     return vegetable.cost;
   }
 
-  const sortOrder = 'asc';
+  const sortOrder = 'desc';
   
 
   data.sort((a, b)=>{
