@@ -10,9 +10,29 @@ function TablePage(){
         {name:'Grape', color:'bg-purple-500', score: 2},
     ]
 
+    const config = [
+        {
+            label:'Fruits',
+            render: (fruit) => fruit.name
+        },
+        {
+            label:'Color',
+            render: (fruit) => <div className={`p-3 m-3 ${fruit.color}`}></div>
+        },
+        {
+            label:'Score',
+            render: (fruit) => fruit.score,
+            sort: (a, b) => a.score - b.score
+        },
+    ]
+
+    const keyFn = (fruit) =>{
+        return fruit.name;
+    }
+
     return (
         <div>
-            <Table data={data}/>
+            <Table data={data} config={config} keyFn={keyFn}/>
         </div>
     )   
 }
