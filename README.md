@@ -243,3 +243,48 @@ A and B are flipped, the way the comparison goes is like so:
     })
 
   ```
+
+  Getting numbers in descending order:
+  ```javascript
+
+  ```
+
+  Sorting array of String:
+  ```javascript
+    const data = ['t','A', 'a', 'B','b']
+    
+    data.sort((a, b)=>{
+      return a.localeCompare(b);
+    })
+
+  ```
+Sorting array of objects:
+```javascript
+  const data = [
+    {
+      name: 'Tomato', cost: 10, weight: 5
+    },
+    {
+      name: 'Carrot', cost: 4, weight: 2
+    },
+    {
+      name: 'Potato', cost: 4, weight: 15
+    },
+    {
+      name: 'Onion', cost: 5, weight: 15
+    },
+  ]
+
+  function getSortValue(vegetable){
+    return vegetable.cost;
+  }
+
+  data.sort((a, b)=>{
+    const valueA = getSortValue(a);
+    const valueB = getSortValue(b);
+
+    return valueA - valueB;
+
+  })
+
+```
