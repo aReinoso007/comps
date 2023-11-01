@@ -279,11 +279,20 @@ Sorting array of objects:
     return vegetable.cost;
   }
 
+  const sortOrder = 'asc';
+  
+
   data.sort((a, b)=>{
     const valueA = getSortValue(a);
     const valueB = getSortValue(b);
 
-    return valueA - valueB;
+    const reverseOrder = sortOrder === 'asc' ? 1 : -1
+
+    if( typeof valueA === 'string'){
+      return valueA.localeCompare(valueB) * reverseOrder;
+    }else{
+      return (valueA - valueB) * reverseOrder;
+    }
 
   })
 
