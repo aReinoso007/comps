@@ -27,7 +27,7 @@ function App() {
         <TablePage/>
       </Route>
       <Route path="/counter">
-        <CounterPage/>
+        <CounterPage initialCount={40}/>
       </Route>
       <Route path="/">
         <DropdownPage />

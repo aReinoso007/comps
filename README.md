@@ -297,3 +297,13 @@ Sorting array of objects:
   })
 
 ```
+
+** Creating Custom Hooks
+1. Make function called 'useSomething'
+2. Fix all the non-JSX expression that refer to 1-2 related pieces of state
+3. Cut them all out, paste them into 'useSomething'
+4. Find 'not defined' errors in the component
+5. In your hook, return an object that contains the varuables the component needs
+6. In the component, call your hook. Destructure the properties the component needs 
+7. Find 'not defined' error in the hook. Pass the missing variables as arguments to the hook
+8. Rename the hook to something more meaningful
