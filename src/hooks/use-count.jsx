@@ -6,13 +6,13 @@ function useCounter({initialCount}){
     useEffect(() => {
     }   , [count]);
 
-    const handleClick = () => { 
+    const increment = () => { 
         setCount(count + 1);
     }
 
     return {
         count,
-        handleClick,
+        increment,
     }
 }
 export default useCounter;;
